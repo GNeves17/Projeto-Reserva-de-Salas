@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Início - Sistema de Salas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -11,63 +13,119 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0f2fe, #f3f4f6);
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
     .container {
       background-color: #ffffff;
-      padding: 40px 60px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      padding: 50px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
       text-align: center;
     }
 
     h1 {
-      margin-bottom: 30px;
-      color: #1f2937;
+      color: #1e3a8a;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
 
-    .buttons {
+    p.description {
+      color: #4b5563;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .options {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    .btn {
-      padding: 14px 24px;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      transition: 0.3s ease;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    .btn:hover {
-      background-color: #1e40af;
+    .option:hover {
+      background-color: #eef2ff;
+      border-color: #c7d2fe;
     }
 
-    @media (min-width: 600px) {
-      .buttons {
-        flex-direction: row;
-        justify-content: center;
+    .option i {
+      font-size: 26px;
+      color: #2563eb;
+      margin-right: 16px;
+    }
+
+    .option-text {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .option .arrow {
+      font-size: 18px;
+      color: #6b7280;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 480px) {
+      .option-text {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1>Sistema de Reserva de Salas</h1>
-    <div class="buttons">
-      <button class="btn" onclick="window.location.href='cadastro.html'">Cadastrar Sala</button>
-      <button class="btn" onclick="window.location.href='index.html'">Reservar Sala</button>
+    <p class="description">
+      Bem-vindo! Escolha uma das opções abaixo para continuar:
+    </p>
+
+    <div class="options">
+      <div class="option" onclick="window.location.href='cadastro.html'">
+        <div class="option-text">
+          <i class="fas fa-plus-circle"></i> Cadastrar Nova Sala
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+
+      <div class="option" onclick="window.location.href='index.html'">
+        <div class="option-text">
+          <i class="fas fa-calendar-check"></i> Reservar Sala
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Sistema de Salas • Desenvolvido por Gustavo Neves
     </div>
   </div>
+
 </body>
 </html>
